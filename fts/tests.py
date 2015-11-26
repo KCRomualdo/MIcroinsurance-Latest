@@ -1,10 +1,10 @@
-from django.test import LiveServerTestCase
+from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 # Create your tests here.
 
-class InsuranceTest(LiveServerTestCase):
+class InsuranceTest(StaticLiveServerTestCase):
 	fixtures = ['admin_user.json']
 
 	def setUp(self):
@@ -18,21 +18,30 @@ class InsuranceTest(LiveServerTestCase):
 		self.browser.get(self.live_server_url + '/admin/')
 
 		body=self.browser.find_element_by_tag_name('body')
-		self.assertIn('Django administration',body.text)
+		self.assertIn('Django administration', body.text)
 
-		f_user=self.browser.find_element_by_name('username')
-		f_user.send_keys('admin')
+		username_field=self.browser.find_element_by_name('username')
+		username_field.send_keys('admin')
 
-		f_pword=self.browser.find_element_by_name('password')
-		f_pword.send_keys('krista')
-		f_pword.send_keys(Keys.ENTER)
+		password_field=self.browser.find_element_by_name('password')
+		password_field.send_keys('admin')
+		password_field.send_keys(Keys.RETURN)
+
+		#self.browser.implicitly_wait(20)
+		body=self.browser.find_element_by_tag_name('body')
+		self.assertIn('Site administration', body.text)
+
+		branch_res=self.browser.find_elements_by_link_text('Branches')
+		self.assertEquals(len(branch_res),1)
+
+		#self.fail('finish this test')
+		branch_res[0].click()
 
 		body=self.browser.find_element_by_tag_name('body')
-		self.assertIn('Site administration',body.text)
+		self.assertIn('0 Branches',body.text)
 
-		branch_res=self.browser.find_element_by_link_text('Branch')
-		self.assertEquals(len(branch_res),2)
+		new_branch=self.browser.find_element_by_link_text('Add branch')
+		new_branch.click()
 
-		self.fail('finish this test')
-
-	
+		body=self.browser.find_element_by_tag_name('body')
+		self.assertIn('Branch name',body.text)
