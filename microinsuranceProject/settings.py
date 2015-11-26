@@ -37,8 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'fts',
-    'branch',
+    'Microinsurance_Maintenance',
 )
 
 MIDDLEWARE_CLASSES = (

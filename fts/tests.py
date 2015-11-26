@@ -34,3 +34,5 @@ class InsuranceTest(LiveServerTestCase):
 		self.assertEquals(len(branch_res),2)
 
 		self.fail('finish this test')
+
+	

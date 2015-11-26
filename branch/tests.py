@@ -5,6 +5,10 @@ from branch.models import Branch
 
 class BranchModelTest(TestCase):
 
+	def test_can_name_the_branch(self):
+		branchName=Branch(title="My first branch")
+		self.assertEqual(str(branchName),branchName.title)
+
 	def test_can_make_a_new_branch_and_save_to_db(self):
 		branch=Branch()
 		#branch.id_number=1
@@ -20,6 +24,4 @@ class BranchModelTest(TestCase):
 		#self.assertEquals(branch_firstEntry.id_number,1)
 		self.assertEquals(branch_firstEntry.branch_name,"Cebuana-Pasig Branch")
 
-	def test_can_name_the_branch(self):
-		branchName=Branch(title="My first branch")
-		self.assertEqual(str(branchName),branchName.title)
+	
