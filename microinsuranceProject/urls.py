@@ -19,4 +19,6 @@ from django.contrib import admin
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^home/$','Microinsurance_Maintenance.views.home_page',name='home_page'),
+    url(r'^transaction/register/$','Microinsurance_Maintenance.views.transaction_page',name='transaction_page'),
+    url(r'^transaction/avail/$','Microinsurance_Maintenance.views.transaction_avail_page',name='transaction_avail_page'),
 )

@@ -144,3 +144,6 @@ class InsuranceTest(StaticLiveServerTestCase):
 
 		#self.fail('finish the test')
 
+	def test_can_get_browser_for_home(self):
+		
+		self.browser.get(self.live_server_url + '/home/')
