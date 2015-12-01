@@ -68,7 +68,7 @@
                     			<div class="col-md-6">
                     			<div class="LeftFormDesign">   
                                      
-              							  <p>Fill up the following for customer's identification:</p>
+              							  <p>Fill up the following:</p>
               						
                                     <form method="POST">
                                         {% csrf_token %}
@@ -80,6 +80,13 @@
                                         </select>
                                         <br></br>
                                         {{ form }}
+                                        <p><b>* Insurance Name:</b></p>
+                                        <select id="insuranceLIST" name="insuranceNameList">{{insurance_list}}
+                                            {% for name in insurance_list %}
+                                                <option>{{name}}</option>
+                                            {% endfor %}
+                                        </select>
+                                        <br></br>
                                         <br><br>
                                         <center>   
                                             <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required"> Save </button>

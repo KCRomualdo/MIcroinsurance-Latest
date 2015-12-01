@@ -58,7 +58,7 @@ class User(models.Model):
 	user_pword=models.CharField(max_length=50,verbose_name=" *  Password:",default='')
 
 	def __str__(self):
-		return self.firstName
+		return "%s %s %s" % (self.firstName,self.midName,self.lastName)
 
 class UserForm(forms.models.ModelForm):
 	class Meta:
@@ -91,6 +91,9 @@ class Customer(models.Model):
 	c_middleName=models.CharField(max_length=50,verbose_name="   Middle Name:",blank='true')
 	c_lastName=models.CharField(max_length=50,verbose_name=" *  Last Name:")
 	c_phoneNumber=models.CharField(max_length=20,verbose_name=" *  Contact Number:")
+
+	def __str__(self):
+		return "%s %s %s" % (self.c_firstName,self.c_middleName,self.c_lastName)
 
 class CustomerForm(forms.models.ModelForm):
 	class Meta:
@@ -127,17 +130,13 @@ class Avail(models.Model):
 class AvailForm(forms.models.ModelForm):
 	class Meta:
 		model=Avail
-		fields=['policyNumber','date_avail','insurance_avail']
+		fields=['policyNumber','date_avail']
 		widgets={
 			'policyNumber':forms.fields.TextInput(attrs={
 				'class':'form-control input-lg',
 			}),
-			
-			'date_avail':forms.fields.TextInput(attrs={
-				'class':'form-control input-lg',
-			}),
 
-			'insurance_avail':forms.fields.TextInput(attrs={
+			'date_avail':forms.fields.TextInput(attrs={
 				'class':'form-control input-lg',
 			}),
 		}
