@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Home | Microinsurance Exercise</title>
+	
+	<!-- core CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/static/css/animate.min.css" rel="stylesheet">
+    <link href="/static/css/prettyPhoto.css" rel="stylesheet">
+    <link href="/static/css/main.css" rel="stylesheet">
+    <link href="/static/css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="/static/images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/static/images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+
+<body class="homepage">
+
+    <header id="header">		
+			
+        <nav class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/home/"><img src="/static/images/icon-1.png" alt="logo"></a>
+                </div>
+				
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+						<li class="active"><a href="#feature">About Micro Insurance</a></li>
+                        <li><a href="/admin/login/?next=/admin/">Log-in as Administrator</a></li> 
+                        <!--<li><a href="contact-us.html">Contact</a></li>-->                     
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+		
+    </header><!--/header-->
+
+    <section id="main-slider" class="no-margin">
+        <div class="carousel slide">
+            <ol class="carousel-indicators">
+                <li data-target="#main-slider" data-slide-to="0" class="active"></li>
+                <li data-target="#main-slider" data-slide-to="1"></li>
+                <li data-target="#main-slider" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+
+                <div class="item active" style="background-image: url(/static/images/ins1.jpg)">
+                   <div class="container">
+            			<div class="center">        
+                
+           				</div> 
+            		<div class="row contact-wrap"> 
+                		<div class="status alert alert-success" style="display: none"></div>
+                    			<div class="col-md-4">
+                    			<div class="LeftFormDesign">
+                    				<div class="center">        
+              							  <h1>Log-in</h1>
+              						</div> 
+                                    <form method="POST">
+                                        {% csrf_token %}
+                                        {{ form }}
+                                        <br><br>
+                                        <br></br>
+                                        <span>Log-in as 
+                                        <a href="/admin/login/?next=/admin/"><b> ADMINISTRATOR </b></a>   
+                                        .
+                                        </span> 
+                                        <center>   
+                                            <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required"> Log-in</button>
+                                        </center>
+                                    </form>
+                        			<br></br>
+                        			   
+                        			
+                        		</div>
+                    			</div>
+                                <div class="col-md-7 ">                   
+                                </div>
+          				  </div><!--/.row-->
+       				 </div><!--/.container-->
+                </div><!--/.item-->
+
+            
+            </div><!--/.carousel-inner-->
+        </div><!--/.carousel-->
+        
+    </section><!--/#main-slider-->
+
+    <section id="feature" >
+        <div class="container">
+           <div class="center wow fadeInDown">
+                <!--<span style="font-color: black;font-size:60px;"><i> Microinsurance </i></span>
+                <p class="lead">Dogs are domesticated descendants of wolves. <br>Their shared ancestry has been traced back 37 to 58 million years, to a five toed, weasel-like animal called Miacis.<br>Here are some sneek peek for facts about dogs:</p>-->
+                <h2><i> Microinsurance </i></h2>
+            </div>
+
+            <div class="row">
+                <div class="features">
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap">
+                            <i class="fa fa-lock"></i>
+                            <h2>Protect.</h2>
+                            <h3>Microinsurance is the protection of low-income people.</h3>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap">
+                            <i class="fa fa-money"></i>
+                            <h2>Low-cost.</h2>
+                            <h3>The coverage value is lower than usual insurance plan.</h3>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap">
+                            <i class="fa fa-medkit"></i>
+                            <h2>Health.</h2>
+                            <h3>Compensation for illness, injury or death.</h3>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                </div><!--/.services-->
+            </div><!--/.row-->    
+			
+        </div><!--/.container-->
+    </section><!--/#feature-->
+
+    <footer id="footer" class="midnight-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2015 <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates"></a>. All Rights Reserved.
+                </div>
+                 <div class="col-sm-6 col-xs-8">
+						
+                       <div class="social">
+					   <p>Contact Me to:</p>
+                            <ul class="social-share">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li> 
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                            </ul>
+						</div>
+                </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/jquery.prettyPhoto.js"></script>
+    <script src="/static/js/jquery.isotope.min.js"></script>
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/wow.min.js"></script>
+</body>
+</html>
